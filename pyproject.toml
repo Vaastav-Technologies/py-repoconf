@@ -1,6 +1,6 @@
 [project]
 name = "repoconf"
-version = "0.0.0dev0"
+version = "0.0.0dev1"
 description = "Centrally configure your decentralised git repo"
 requires-python = ">=3.12"
 readme = "README.md"
@@ -35,20 +35,20 @@ classifiers = [
 license = "Apache-2.0"
 license-files = ["LICENSE"]
 dependencies = [
-    "logician >= 0.0.0.dev6",
-    "gitbolt >= 0.0.0.dev10",
-    "vt-commons >= 0.0.1.dev4",
-    "vt-err-hndlr >= 0.0.0.dev3",
+    "logician >= 0.0.0.dev12",
+    "gitbolt >= 0.0.0.dev14",
+    "vt-commons >= 0.0.1.dev10",
+    "vt-err-hndlr >= 0.0.0.dev7",
 ]
 
 [dependency-groups]
-lint = ["ruff"]
-typecheck = ["mypy"]
+lint = ["ruff >= 0.15.8"]
+typecheck = ["mypy >= 1.19.1"]
 dev = [{include-group = "lint"}, {include-group = "typecheck"}]
-doc = ["sphinx", "sphinx-argparse"]
-test = ["pytest", "gitbolt[test]"]
-cover = [{include-group = "test"}, "pytest-cov"]
-multitest = ["tox"]
+doc = ["sphinx >= 9.1.0", "sphinx-argparse >= 0.5.2"]
+test = ["pytest >= 9.0.2", "gitbolt[test] >= 0.0.0.dev14"]
+cover = [{include-group = "test"}, "pytest-cov >= 7.1.0"]
+multitest = ["tox >= 4.51.0"]
 
 [project.urls]
 homepage = "https://github.com/Vaastav-Technologies/py-repoconf"
